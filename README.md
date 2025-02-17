@@ -9,9 +9,8 @@
 <img src="https://github.com/oracleyu01/python_class/blob/main/yys/python1.png" width="600" height="400">
 
 &nbsp;  
-💻**강의 제목**: 파이썬으로 시작하는 데이터 분석 배우기 ! 💡📈 📊    
+💻**강의 제목**: 🐍 파이썬으로 시작하는 데이터 분석 배우기 ! 💡📈 📊    
 &nbsp;  
-# 🐍 Python을 이용한 데이터 분석
 
 ## 📊 소개
 
