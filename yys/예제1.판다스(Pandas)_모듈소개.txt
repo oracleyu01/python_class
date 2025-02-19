@@ -13,10 +13,6 @@
 
 문법:  emp[ 컬럼명 ] [검색조건]
 
-import  pandas  as  pd   # 판다스 모듈을 불러옵니다. 
-
-emp = pd.read_csv("d:\\data\\emp.csv")
-emp[ ['ename', 'sal'] ]
 
 ▩ 예제2. 특정 컬럼 출력하기 
 
@@ -25,9 +21,9 @@ emp[ ['ename', 'sal'] ]
 SQL> select  ename, sal
           from  emp;
 
-Pandas>  emp[ ['ename', 'sal']  ]
+Pandas> 
 
 문제1. 사원이름, 월급, 직업, 부서번호를 출력하시오 !
 
-Pandas> emp[ ['ename', 'sal', 'job','deptno'] ]
+Pandas> 
 
