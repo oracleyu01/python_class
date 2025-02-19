@@ -9,7 +9,7 @@ SQL> select  ename, sal
          from  emp
         where  sal  >= 3000;
 
-Pandas> emp[ ['ename', 'sal'] ] [ emp['sal'] >= 3000 ]
+Pandas> 
 
 ※ 비교 연산자 총정리 
 
@@ -23,7 +23,7 @@ Pandas> emp[ ['ename', 'sal'] ] [ emp['sal'] >= 3000 ]
 
 문제1. 직업이 SALSMAN 인 사원들의 이름과 월급과 직업을 출력하시오 !
 
-emp[ ['ename, 'sal', 'job'] ] [ emp['job']=='SALESMAN']
+
 
 ※ 판다스의 데이터 검색하는 방법 3가지 ?
 
@@ -47,5 +47,4 @@ SQL> select  ename, sal, deptno
           from emp 
           where  deptno = 20;
 
-Pandas> emp.loc[ emp.deptno == 20, ['ename', 'sal', 'deptno'] ]
-
+Pandas> 
