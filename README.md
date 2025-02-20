@@ -147,8 +147,7 @@ Python을 통한 데이터 분석은 이러한 능력을 개발하는 가장 접
 <a href="https://www.inflearn.com/course/데이터-분석가-실무-sql" target="_blank" rel="noopener noreferrer">
     <img src="https://github.com/oracleyu01/statistics/blob/main/yys/SQL200.png" alt="SQL200" style="width:300px;">
 </a>
-
-&nbsp;   
+   
 
 아래의 url 을 복사하셔서 접속하시면 됩니다.
 
