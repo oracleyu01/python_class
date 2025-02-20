@@ -6,10 +6,10 @@ SQL> select  distinct  deptno
           from  emp;
 
 
-Pandas>  emp.loc[ :  , ['deptno'] ].unique()
+Pandas>  
 
 설명: unique 함수를 사용하려면 시리즈(series) 에서만 사용할 수 있습니다. 
 
 문제1.  train.csv 에서 제공플랫폼을 출력하는데 중복을 제거해서 출력하시오 !
 
-train.loc[  :  , '제공플랫폼'].unique()
+
