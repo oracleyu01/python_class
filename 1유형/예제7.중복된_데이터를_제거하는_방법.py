@@ -13,6 +13,8 @@ Pandas>
 
 문제1.  train.csv 에서 제공플랫폼을 출력하는데 중복을 제거해서 출력하시오 !
 
+데이터 있는곳: https://cafe.daum.net/oracleoracle/Sq8G/2
+
 답:
 
 
