@@ -144,11 +144,9 @@ Python을 통한 데이터 분석은 이러한 능력을 개발하는 가장 접
 
 ### **초보자도 쉽게 배우는 SQL200제**
 
-### 강의 링크
-
 <img src="https://github.com/oracleyu01/statistics/blob/main/yys/SQL200.png?raw=true" width="300"/>
 
-[데이터 분석가의 실무 SQL](https://www.inflearn.com/course/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D%EA%B0%80-%EC%8B%A4%EB%AC%B4-sql)
+[데이터 분석가의 실무 SQL](https://inf.run/LiqY)
 
 
 
