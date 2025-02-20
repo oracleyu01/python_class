@@ -1,6 +1,4 @@
-▩ 예제6. 판다스에서 날짜 데이터 다루기 (★)
-
-예제6._판다스에서_날짜_데이터_다루기.py
+▩ 예제6. 판다스에서 날짜 데이터 다루기 
 
  기본적으로 엑셀이나 csv 파일을 판다스로 구성하면 날짜 데이터의 경우는
  날짜형이 아니라 문자형으로 구성됩니다. 
@@ -46,7 +44,7 @@ SQL>  select  ename, hiredate
            from  emp
            where  hiredate='81-11-17';
 
-pandas> emp.loc[ emp.hiredate=='81-11-17', ['ename' , 'hiredate'] ]
+pandas> 
 
 문제2. 아래의 SQL을 판다스로 구현하시오 !
 
@@ -56,15 +54,10 @@ SQL> select  ename, hiredate
           order  by  hiredate  desc; 
 
 답:
-df = emp.loc[ emp.hiredate.between('81-01-01','81-12-31'),  ['ename', 'hiredate'] ]
-df.sort_values(by='hiredate', ascending=False)
+
+
 
 문제3.  train.csv 에서 매물확인방식이 현장확인인것 필터링해서 매물확인방식과 
           게재일을 출력하는데 게재일이 높은것부터 출력하시오 !
 
-import pandas as  pd
-train=pd.read_csv("D:\\data\\open_budongsan\\train.csv")
 
-train['게재일'] = pd.to_datetime(train['게재일'])
-df = train.loc[ train.매물확인방식=='현장확인', ['매물확인방식', '게재일'] ]
-df.sort_values( by='게재일' , ascending=False)
