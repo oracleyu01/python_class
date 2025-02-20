@@ -46,7 +46,7 @@ Python은 데이터 분석가가 아이디어를 빠르게 구현하고 검증�
 2. 🤖 머신러닝을 이용한 데이터 분석 (scikit-learn)
 3. 📊 통계적 분석 및 가설 검정 (SciPy, StatsModels)
 4. 🔤 Python 기초 프로그래밍
-5. 🕸️ 데이터 수집 웹스크롤링 (BeautifulSoup, Selenium)
+5. 🕸️ 다양한 데이터 수집 웹스크롤링 (BeautifulSoup, Selenium)
 6. 📝 Adsp, 빅데이터 분석기사 국가 기술 자격증 기출 문제 풀이 및 합격
 7. 🏆 데이콘 상위권 진입
 
