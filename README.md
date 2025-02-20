@@ -148,7 +148,9 @@ Python을 통한 데이터 분석은 이러한 능력을 개발하는 가장 접
     <img src="https://github.com/oracleyu01/statistics/blob/main/yys/SQL200.png" alt="SQL200" style="width:300px;">
 </a>
 
-위의 이미지를 클릭하고 바로 접속이 안되면 한번 더 엔터를 치시면 인프런 교육 사이트에 접속하실 수 있습니다.  
+&nbsp;   
+
+위의 이미지를 클릭하고 바로 접속이 안되면 한번 더 엔터를 치시면 접속하실 수 있습니다.  
 
 &nbsp;  
 
