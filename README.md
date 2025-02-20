@@ -6,7 +6,7 @@
 
 이 자료가 여러분의 데이터 분석 여정에 든든한 밑거름이 되길 바랍니다. 😊  
 
-<img src="https://github.com/oracleyu01/python_class/blob/main/data/main.png" width="600" height="400">
+<img src="https://github.com/oracleyu01/python_class/blob/main/data/main2.png" width="600" height="400">
 
 &nbsp;  
 
