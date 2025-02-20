@@ -8,11 +8,11 @@ SQL> select  ename, sal
           from  emp 
           order   by   sal   desc ;
 
-Pandas>  emp[ ['ename', 'sal' ] ].sort_values(by='sal', ascending=False) 
+Pandas>  
 
 또는 
 
-Pandas> emp.loc[  :  , ['ename', 'sal' ] ].sort_values(by='sal', ascending=False)
+Pandas> 
 
  콜론(:) 은 모든 행을 다보겠다는 의미입니다. 
 
@@ -24,7 +24,7 @@ SQL> select  ename, sal
          where  job  != 'SALESMAN'
          order  by  sal  desc ;
 
-Pandas> emp.loc[ emp.job !='SALESMAN', ['ename', 'sal' ] ].sort_values(by='sal', ascending=False)
+Pandas> 
 
 
 문제2. 데이콘 데이터인 부동산 허위매물 데이터의 훈련 데이터를 불러와서 판다스 
@@ -34,19 +34,11 @@ Pandas> emp.loc[ emp.job !='SALESMAN', ['ename', 'sal' ] ].sort_values(by='sal',
 
 답:
 
-import pandas as  pd
 
-train=pd.read_csv("D:\\data\\open_budongsan\\train.csv")
-train.head()
 
 문제3. train 데이터프레임에서 허위매물인 데이터의 허위매물여부와 보증금을 검색
-        하는데 보증금이 높은것부터 출력하시오 !
+       하는데 보증금이 높은것부터 출력하시오 !
 
-import pandas as  pd
+답:
 
-train=pd.read_csv("D:\\data\\open_budongsan\\train.csv")
-
-df = train.loc[ train.허위매물여부==1, ['허위매물여부', '보증금'] ]
-
-df.sort_values( by='보증금', ascending=False)
 
