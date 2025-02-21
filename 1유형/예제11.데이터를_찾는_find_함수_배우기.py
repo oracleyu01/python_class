@@ -13,4 +13,10 @@ a.find('k')   # 없는 철자를 찾으려고 시도하면 -1 이 나옵니다.
 emp = pd.read_csv("c:\\data\\emp.csv")
 emp
 
+답:
+
+
+
+
+
 
