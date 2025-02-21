@@ -1,5 +1,5 @@
 
-▩ 예제13.공백을_잘라내는_함수_strip.py 
+▩ 예제13.공백을_잘라내는_함수_strip
 
 문법:  strip 함수를 사용해서 공백을 잘라낼 수 있습니다.
 
@@ -22,9 +22,9 @@ insert  into  emp(empno, ename, sal )
   values( 9911, '  JACK  ',  3000);
 
 답:
-new_row = {'empno' : 9911, 'ename' : '  JACK  ', 'sal' : 3000 }
-emp.loc[  len(emp), :  ] = new_row
-emp
+
+
+
 
 설명: 일부러 이름에 JACK 을 양쪽 공백을 넣어서 입력했습니다.
 
@@ -34,7 +34,8 @@ SQL> select  ename, sal
           from  emp 
           where  trim(ename)='JACK';
 
-Pandas> emp.loc[ emp.ename.str.strip()=='JACK', ['ename', 'sal'] ]
+Pandas> 
+
 
 자주 사용하는 문자함수를 총정리: 
 
