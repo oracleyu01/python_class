@@ -36,6 +36,6 @@ deptno       0
 
 import pandas  as  pd
 
-train = pd.read_csv("d:\\data\\open_budongsan\\train.csv")
+train = pd.read_csv("d:\\data\\train.csv")
 train.isnull().sum()
 
