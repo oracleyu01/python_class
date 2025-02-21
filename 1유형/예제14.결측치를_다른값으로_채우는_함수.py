@@ -13,7 +13,8 @@ df['컬럼명'] = df['컬럼명'].fillna(method='bfill')  # 결측치 바로 뒤
 
 import pandas as pd
 emp = pd.read_csv("d:\\data\\emp.csv")
-emp.isnull().sum()
+
+
 
 empno        0
 ename        0
@@ -26,14 +27,12 @@ deptno       0
 
 문제2. emp 데이터 프레임의 comm 의 결측치를 comm의 평균값으로 채우시오
 
-emp['comm'] = emp['comm'].fillna( emp['comm'].mean() )
-emp
+답: 
 
-emp.isnull().sum()
 
-문제3.  (오늘의 마지막 문제)
-         부동산 허위매물 훈련 데이터를 불러와서 결측치가 있는 컬럼들의 
-         데이터중 숫자형 컬럼의 결측치를 해당 컬럼의 평균값으로 채우시오 !
+
+문제3. 부동산 허위매물 훈련 데이터를 불러와서 결측치가 있는 컬럼들의 
+       데이터중 숫자형 컬럼의 결측치를 해당 컬럼의 평균값으로 채우시오 !
 
 import pandas  as  pd
 
