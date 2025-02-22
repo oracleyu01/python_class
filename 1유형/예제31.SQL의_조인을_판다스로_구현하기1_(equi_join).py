@@ -22,10 +22,8 @@ SQL>  select   e.ename,  d.loc
           where  e.deptno = d.deptno ;
 
 답:
-import pandas  as  pd
 
-result = pd.merge(emp, dept, on='deptno')
-result.loc[ : , ['ename', 'loc'] ]
+
 
 문제1. 아래의 SQL 을 판다스로 구현하시오 !
 
@@ -34,8 +32,7 @@ SQL>  select   e.ename,  d.loc
           where  e.deptno = d.deptno  and  e.job='ANALYST'; 
 
 답:
-import pandas  as  pd
 
-result = pd.merge(emp, dept, on='deptno')
-result.loc[ result['job']=='ANALYST' , ['ename', 'loc'] ]
+
+
 
