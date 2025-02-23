@@ -133,7 +133,7 @@ Python을 통한 데이터 분석은 이러한 능력을 개발하는 가장 접
 - **예제51.K-means 비지도 학습**:  📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C51.K-means_%EA%B5%B0%EC%A7%91%EB%B6%84%EC%84%9D_%EA%B0%9C%EB%85%90_%EC%A0%95%EB%A6%AC.py)  
 - **예제52.연관규칙 비지도 학습**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C52.%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99_%EB%B6%84%EC%84%9D(Association_Rule_Analysis).py)   
 - **예제53.k-fold 교차검정**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C53.k-fold_%EA%B5%90%EC%B0%A8%EA%B2%80%EC%A0%95.py)  
-- **예제54.XGboost 머신러닝 모델로 데이터 분류하기**:  
+- **예제54.XGboost 머신러닝 모델로 데이터 분류하기**:  📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C54.XGBoost_%EB%A1%9C_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EB%A5%98%ED%95%98%EA%B8%B0.py)
 - **예제55.lightGBM 머신러닝 모델로 데이터 분류하기**:  
 - **예제56.빅데이터 분석 기사 실기 시험 작업형 2번 문제 풀기:**:   
 
