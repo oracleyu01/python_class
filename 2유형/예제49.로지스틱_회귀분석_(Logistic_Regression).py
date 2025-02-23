@@ -12,6 +12,8 @@
 - 실패확률(1-p) 대비 성공확률(p)의 비율
 - 수식: Odds = p/(1-p)
 
+관련 그림: https://cafe.daum.net/oracleoracle/Sq8G/66
+
 ### 2.2 로짓(Logit)
 - 오즈에 자연로그를 취한 값
 - 수식: Logit = ln(odds) = ln(p/(1-p))
