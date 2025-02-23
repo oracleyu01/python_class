@@ -128,11 +128,11 @@ Python을 통한 데이터 분석은 이러한 능력을 개발하는 가장 접
 - **예제46.나이브 베이즈 머신러닝 모델로 데이터 분류하기**:  📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C2.%EB%82%98%EC%9D%B4%EB%B8%8C_%EB%B2%A0%EC%9D%B4%EC%A6%88_%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D_%EB%AA%A8%EB%8D%B8%EB%A1%9C_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EB%A5%98%ED%95%98%EA%B8%B0.py)
 - **예제47.의사결정 트리 머신러닝 모델로 데이터 분류하기**:  📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C3.%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95_%ED%8A%B8%EB%A6%AC%EB%A1%9C_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%B6%84%EB%A5%98%ED%95%98%EA%B8%B0.py)
 - **예제48.인공신경망 머신러닝 모델로 데이터 분류하기**:  📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C4.%EC%9D%B8%EA%B3%B5_%EC%8B%A0%EA%B2%BD%EB%A7%9D_%EB%AA%A8%EB%8D%B8_%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.py)   
-- **예제49.로지스틱 회귀 머신러닝 모델로 데이터 분류하기**:  📄[노트]()  
-- **예제50.서포트 벡터 머신러닝 모델로 데이터 분류하기**:  📄[노트]()  
-- **예제51.K-means 비지도 학습**:  📄[노트]()  
-- **예제52.연관규칙 비지도 학습**: 📄[노트]()  
-- **예제53.k-fold 교차검정**: 📄[노트]()
+- **예제49.로지스틱 회귀 머신러닝 모델로 데이터 분류하기**:  📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C49.%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1_%ED%9A%8C%EA%B7%80%EB%B6%84%EC%84%9D_(Logistic_Regression).py)  
+- **예제50.서포트 벡터 머신러닝 모델로 데이터 분류하기**:  📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C50.%EC%84%9C%ED%8F%AC%ED%8A%B8_%EB%B0%B1%ED%84%B0_%EB%A8%B8%EC%8B%A0.py)  
+- **예제51.K-means 비지도 학습**:  📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C51.K-means_%EA%B5%B0%EC%A7%91%EB%B6%84%EC%84%9D_%EA%B0%9C%EB%85%90_%EC%A0%95%EB%A6%AC.py)  
+- **예제52.연관규칙 비지도 학습**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C52.%EC%97%B0%EA%B4%80%EA%B7%9C%EC%B9%99_%EB%B6%84%EC%84%9D(Association_Rule_Analysis).py)   
+- **예제53.k-fold 교차검정**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C53.k-fold_%EA%B5%90%EC%B0%A8%EA%B2%80%EC%A0%95.py)  
 - **예제54.XGboost 머신러닝 모델로 데이터 분류하기**:  
 - **예제55.lightGBM 머신러닝 모델로 데이터 분류하기**:  
 - **예제56.빅데이터 분석 기사 실기 시험 작업형 2번 문제 풀기:**:   
