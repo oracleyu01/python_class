@@ -2,6 +2,9 @@
 
 ■■ 부스팅(Boosting) 기법
 
+설명 그림 : https://cafe.daum.net/oracleoracle/Sq3w/125
+
+
 ■ 기본 개념:
 
 여러 약한 학습기(weak learners)를 순차적으로 학습시켜, 이전 모델이 잘못 예측한 데이터에 가중치를 부여하면서 점점 성능이 향상되는 강한 모델(strong learner)을 만드는 앙상블 기법입니다.
@@ -20,32 +23,32 @@ GBM(Gradient Boosting Machine)의 개선판으로, 계산 효율과 성능 면�
 
  1.랜덤 포레스트(Random Forest):
 
-부스팅이 아닌 배깅(Bagging) 기반 앙상블 기법으로, 여러 결정 트리를 독립적으로 학습시킨 후 다수결 방식으로 예측합니다.
+    부스팅이 아닌 배깅(Bagging) 기반 앙상블 기법으로, 여러 결정 트리를 독립적으로 학습시킨 후 다수결 방식으로 예측합니다.
 
-2. XGBoost (Extreme Gradient Boosting)
-
-
- - GBM 개선:
-
-XGBoost는 기존의 GBM을 개선한 방식으로, 학습 과정에서 정규화(regularization)와 트리 가지치기(pruning) 등 
-다양한 기법을 도입하여 과적합을 줄이고 성능을 향상시킵니다.
-
-- 속도:
-
-GBM보다 빠른 학습 속도를 보이며, 이는 효율적인 메모리 사용과 최적화된 알고리즘 구현 덕분입니다.
-
-- 병렬 처리 지원:
+ 2. XGBoost (Extreme Gradient Boosting)
 
 
-XGBoost는 병렬 처리를 지원하여 다중 코어 환경에서 동시에 여러 트리를 학습할 수 있어, 학습 시간을 단축시킵니다.
+  - 2.1 GBM 개선:
 
-- 하이퍼파라미터 최적화:
+      XGBoost는 기존의 GBM을 개선한 방식으로, 학습 과정에서 정규화(regularization)와 트리 가지치기(pruning) 등  
+      다양한 기법을 도입하여 과적합을 줄이고 성능을 향상시킵니다.
 
-다양한 하이퍼파라미터(예: 학습률, 최대 깊이, 정규화 계수 등)를 조정해야 하며, 이를 통해 모델의 성능을 최적화할 수 있습니다.
+  - 2.2 속도 향상:
 
-- 과적합 방지:
+      GBM보다 빠른 학습 속도를 보이며, 이는 효율적인 메모리 사용과 최적화된 알고리즘 구현 덕분입니다.
 
-정규화와 조기 종료(early stopping) 기법 등을 통해 과적합을 효과적으로 제어합니다.
+  - 2.3 병렬 처리 지원:
+
+
+     XGBoost는 병렬 처리를 지원하여 다중 코어 환경에서 동시에 여러 트리를 학습할 수 있어, 학습 시간을 단축시킵니다.
+
+  - 2.4  하이퍼파라미터 최적화:
+
+     다양한 하이퍼파라미터(예: 학습률, 최대 깊이, 정규화 계수 등)를 조정해야 하며, 이를 통해 모델의 성능을 최적화할 수 있습니다.
+
+  - 2.5 과적합 방지:
+
+     정규화와 조기 종료(early stopping) 기법 등을 통해 과적합을 효과적으로 제어합니다.
 
 
 
@@ -58,7 +61,7 @@ XGBoost는 병렬 처리를 지원하여 다중 코어 환경에서 동시에 �
 3. 과적합이 자주 발생한다
 4. 하이퍼파라미터 최적화가 필요없다
 
-정답: 
+정답: 1
 
 
 문제2. 부스팅 기법을 사용하는 알고리즘으로 옳지 않은 것은?
@@ -69,7 +72,7 @@ XGBoost는 병렬 처리를 지원하여 다중 코어 환경에서 동시에 �
 3.Random Forest
 4.LightGBM
 
-정답: 
+정답: 3
 
 
 문제3. XGBoost의 특징으로 옳은 것은?
@@ -80,321 +83,220 @@ XGBoost는 병렬 처리를 지원하여 다중 코어 환경에서 동시에 �
 3.병렬 처리를 지원한다
 4.하나의 커널함수만 사용한다
 
-정답: 
+정답: 3
 
 
-예제1. 약한 학습기가 몇개가 있어야 90% 이상의 성능을 보일 수 있나 ?
+■ 예제1.단일 의사결정트리 모델일 때의 코드
+
+  독일은행 데이터(credit.csv) 를 가지고 의사 결정트리 모델을 생성하시오!
+  채무를 불이행 사람들을 예측하는 머신러닝 모델을 생성 하시오!
+
+#1. 데이터 불러오기
+import pandas  as  pd
+
+credit = pd.read_csv("d:\\data\\credit.csv") 
+#credit.head()
+
+#2. 데이터 확인하기
+#credit.shape
+#credit.info()  
+
+#3. 결측치 확인하기 
+credit.isnull().sum()
+
+#4. 범주형 데이터를 숫자형으로 인코딩 하기 (★)
+#credit.info()
+
+from sklearn.preprocessing import  LabelEncoder
+
+label_encoder = LabelEncoder()
+
+credit['checking_balance'] =label_encoder.fit_transform(credit.loc[ : , 'checking_balance'])
+credit['credit_history'] =label_encoder.fit_transform(credit.loc[ : , 'credit_history'])
+credit['purpose'] =label_encoder.fit_transform(credit.loc[ : , 'purpose'])
+credit['savings_balance'] =label_encoder.fit_transform(credit.loc[ : , 'savings_balance'])
+credit['employment_duration'] =label_encoder.fit_transform(credit.loc[ : , 'employment_duration'])
+credit['other_credit'] =label_encoder.fit_transform(credit.loc[ : , 'other_credit'])
+credit['housing'] =label_encoder.fit_transform(credit.loc[ : , 'housing'])
+credit['job'] =label_encoder.fit_transform(credit.loc[ : , 'job'])
+credit['phone'] =label_encoder.fit_transform(credit.loc[ : , 'phone'])
+credit['default'] =label_encoder.fit_transform(credit.loc[ : , 'default'])
+
+credit.info()
+
+#5. 종속변수와 독립변수 분리하기 
+x = credit.drop('default', axis=1)  # 독립변수 
+y = credit.loc[ : , 'default']
+y.value_counts()  # 1 이 관심범주(채무불이행자), 0 이 비관심범주(채무이행자)
+
+#6. 데이터 스켈링 
+from  sklearn.preprocessing  import  MinMaxScaler 
+scaler = MinMaxScaler()
+
+x_scaled = scaler.fit_transform(x)
+
+#7. 훈련 데이터와 테스트 데이터 분리하기 
+from sklearn.model_selection  import  train_test_split
+
+x_train, x_test, y_train, y_test = train_test_split( x_scaled, y, test_size=0.1,\
+                                                              random_state=42) 
+
+print(x_train.shape)  # (800, 16)
+print(x_test.shape)   # (200, 16) 
+print(y_train.shape)  # (800 , )
+print(y_test.shape)   # (200,  )
+
+#8. 모델 생성
+from  sklearn.tree  import  DecisionTreeClassifier 
+
+credit_model = DecisionTreeClassifier()
 
 
-from math import comb
-from math import floor
+#8. 모델 생성
+from  sklearn.tree  import  DecisionTreeClassifier 
 
-def ret_err(n, err):
-    sum = 0
-    
-    # floor(n/2)부터 n까지 반복
-    for i in range(floor(n/2), n + 1):
-        sum += comb(n, i) * (err ** i) * ((1 - err) ** (n - i))
-    
-    return sum
+credit_model = DecisionTreeClassifier(random_state=42)
 
-# 1부터 60까지 반복
-for j in range(1, 61):
-    err = ret_err(j, 0.4)
-    print(f"{j} ---> {1-err:.4f}")
-    
-    # 정확도가 90% 이상이면 중단
-    if (1 - err) >= 0.9:
-        break
+#9. 모델 훈련
+credit_model.fit(x_train, y_train)  
 
 
-예제2.단일 의사결정트리 모델일 때의 코드
-
-# 필요한 패키지 import
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
-import pandas as pd
-import numpy as np
-
-# 데이터 불러오기
-iris = pd.read_csv("d:/data/iris2.csv")
-
-# 특성(X)과 타겟(y) 분리
-X = iris.drop('Species', axis=1)
-y = iris['Species']
-
-# 훈련/테스트 데이터 분할 (90:10)
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.1, random_state=123
-)
-
-print("훈련 데이터 shape:", X_train.shape)  # (135, 4)
-print("테스트 데이터 shape:", X_test.shape)  # (15, 4)
-
-# 의사결정 트리 모델 생성
-dt_model = DecisionTreeClassifier(random_state=123)
-
-# 10-fold 교차 검증 수행
-cv_scores = cross_val_score(dt_model, X_train, y_train, cv=10)
-print("\n교차 검증 점수:", cv_scores)
-print("평균 교차 검증 점수: {:.3f} (+/- {:.3f})".format(
-    cv_scores.mean(), cv_scores.std() * 2
-))
-
-# 최종 모델 학습
-dt_model.fit(X_train, y_train)
-
-# 테스트 데이터 예측
-test_predictions = dt_model.predict(X_test)
-
-# 테스트 세트 성능 평가
-print("\n테스트 세트 성능 평가:")
-print("혼동 행렬:")
-print(confusion_matrix(y_test, test_predictions))
-print("\n분류 보고서:")
-print(classification_report(y_test, test_predictions))
-print(f"테스트 데이터 정확도: {accuracy_score(y_test, test_predictions):.3f}")
-
-# 훈련 데이터 예측
-train_predictions = dt_model.predict(X_train)
-
-# 훈련 세트 성능 평가
-print("\n훈련 세트 성능 평가:")
-print("혼동 행렬:")
-print(confusion_matrix(y_train, train_predictions))
-print("\n분류 보고서:")
-print(classification_report(y_train, train_predictions))
-print(f"훈련 데이터 정확도: {accuracy_score(y_train, train_predictions):.3f}")
-
-
-예제3. 배깅으로 구현했을때 
-
-# 필요한 패키지 import
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.ensemble import BaggingClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
-import pandas as pd
-import numpy as np
-
-# 데이터 불러오기
-iris = pd.read_csv("d:/data/iris2.csv")
-
-# 특성(X)과 타겟(y) 분리
-X = iris.drop('Species', axis=1)
-y = iris['Species']
-
-# 훈련/테스트 데이터 분할 (90:10)
-X_train, X_test, y_train, y_test = train_test_split(
-   X, y, test_size=0.1, random_state=123
-)
-
-print("훈련 데이터 shape:", X_train.shape)
-print("테스트 데이터 shape:", X_test.shape)
-
-# 배깅 모델 생성 (25개의 의사결정나무)
-bagging_model = BaggingClassifier(
-   estimator=DecisionTreeClassifier(),
-   n_estimators=25,
-   random_state=123
-)
-
-# 10-fold 교차 검증 수행
-cv_scores = cross_val_score(bagging_model, X_train, y_train, cv=10)
-print("\n교차 검증 점수:", cv_scores)
-print("평균 교차 검증 점수: {:.3f} (+/- {:.3f})".format(
-   cv_scores.mean(), cv_scores.std() * 2
-))
-
-# 최종 모델 학습
-bagging_model.fit(X_train, y_train)
+#10. 모델 예측
+# 훈련 데이터 예측 
+train_result = credit_model.predict(x_train)
 
 # 테스트 데이터 예측
-test_predictions = bagging_model.predict(X_test)
+result = credit_model.predict(x_test) 
 
-# 테스트 세트 성능 평가
-print("\n테스트 세트 성능 평가:")
-print("혼동 행렬:")
-print(confusion_matrix(y_test, test_predictions))
-print("\n분류 보고서:")
-print(classification_report(y_test, test_predictions))
-print(f"테스트 데이터 정확도: {accuracy_score(y_test, test_predictions):.3f}")
+#11. 모델 평가
+# 훈련 데이터 정확도
+print( sum(train_result==y_train) / len(y_train) )  # 1.0
 
-# 훈련 데이터 예측
-train_predictions = bagging_model.predict(X_train)
+# 테스트 정확도 
+print( sum( result == y_test ) / len(y_test) )  # 0.735
 
-# 훈련 세트 성능 평가
-print("\n훈련 세트 성능 평가:")
-print("혼동 행렬:")
-print(confusion_matrix(y_train, train_predictions))
-print("\n분류 보고서:")
-print(classification_report(y_train, train_predictions))
-print(f"훈련 데이터 정확도: {accuracy_score(y_train, train_predictions):.3f}")
 
-# 모델 정보 출력
-print("\n모델 정보:")
-print(f"기본 분류기: Decision Tree")
-print(f"배깅 분류기 개수: 25")
-print(f"교차 검증 평균 정확도: {cv_scores.mean():.3f}")
 
-예제4. 부스팅으로 구현했을때
 
-# 필요한 패키지 import
+■ 예제2. xgboost 로 구현했을때
+
+#1. 필요한 라이브러리 불러오기
+import pandas as pd
+import xgboost as xgb
+from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 from sklearn.model_selection import train_test_split, GridSearchCV
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score, classification_report
 
-# 데이터 불러오기
-iris = pd.read_csv("d:/data/iris2.csv")
+#2. 데이터 불러오기
 
-# 특성(X)과 타겟(y) 분리
-X = iris.drop('Species', axis=1)
-y = iris['Species']
+credit = pd.read_csv("d:\\data\\credit.csv")
 
-# 훈련/테스트 데이터 분할 (90:10)
-X_train, X_test, y_train, y_test = train_test_split(
-   X, y, test_size=0.1, random_state=123
-)
+#3. 결측치 확인
 
-print("훈련 데이터 shape:", X_train.shape)
-print("테스트 데이터 shape:", X_test.shape)
+credit.isnull().sum()
 
-# GridSearch를 위한 파라미터 그리드 설정
+#4. 범주형 데이터 인코딩
+
+label_encoder = LabelEncoder()
+categorical_columns = ['checking_balance', 'credit_history', 'purpose', 
+                              'savings_balance', 'employment_duration', 'other_credit',
+                               'housing', 'job', 'phone', 'default']
+
+for column in categorical_columns:
+    credit[column] = label_encoder.fit_transform(credit[column])
+
+#5. 특성과 타겟 분리
+
+X = credit.drop('default', axis=1)
+y = credit['default']
+
+#6. 데이터 스케일링
+
+scaler = MinMaxScaler()
+X_scaled = scaler.fit_transform(X)
+
+#7. 훈련 데이터와 테스트 데이터 분리하기 
+
+from sklearn.model_selection import train_test_split
+
+# test_size와 random_state 설정을 유지하면서 데이터 분할
+x_train, x_test, y_train, y_test = train_test_split(x_scaled, y, 
+                                                    test_size=0.1,
+                                                    random_state=42,
+                                                    stratify=y)  # 클래스 비율 유지
+
+print("Training set shape:", x_train.shape, y_train.shape)
+print("Test set shape:", x_test.shape, y_test.shape)
+
+#8. XGBoost 모델 생성 및 GridSearchCV 적용
+from xgboost import XGBClassifier
+from sklearn.model_selection import GridSearchCV
+
+# 탐색할 하이퍼파라미터 설정
 param_grid = {
-   'n_estimators': [100, 150, 200, 250],  # 트리의 개수
-   'max_depth': [3, 4, 5],                # 트리의 깊이
-   'learning_rate': [0.1],                # 학습률
-   'min_samples_leaf': [10]               # 말단 노드의 최소 관측치 수
+    'max_depth': [3, 4, 5],
+    'learning_rate': [0.01, 0.1],
+    'n_estimators': [100, 200],
+    'min_child_weight': [1, 3],
+    'subsample': [0.8, 0.9],
+    'colsample_bytree': [0.8, 0.9]
 }
 
-# GBM 모델 생성
-gbm = GradientBoostingClassifier(random_state=123)
+# 기본 모델 생성
+xgb_model = XGBClassifier(random_state=42)
 
-# GridSearchCV로 최적 파라미터 탐색 (10-fold 교차검증)
+# GridSearchCV 객체 생성
 grid_search = GridSearchCV(
-   estimator=gbm,
-   param_grid=param_grid,
-   cv=10,
-   n_jobs=-1,
-   verbose=0
+    estimator=xgb_model,
+    param_grid=param_grid,
+    cv=5,
+    scoring='accuracy',
+    n_jobs=-1,
+    verbose=2
 )
 
-# 모델 학습
-grid_search.fit(X_train, y_train)
+#9. 모델 훈련 (GridSearch 수행)
+
+grid_search.fit(x_train, y_train)
 
 # 최적 파라미터 출력
-print("\n최적 파라미터:")
-print(grid_search.best_params_)
+print("Best parameters:", grid_search.best_params_)
+print("Best cross-validation score:", grid_search.best_score_)
 
-# 최적 모델 가져오기
+# 최적 모델 저장
 best_model = grid_search.best_estimator_
 
-# 테스트 데이터 예측
-test_predictions = best_model.predict(X_test)
-
-# 테스트 세트 성능 평가
-print("\n테스트 세트 성능 평가:")
-print("혼동 행렬:")
-print(confusion_matrix(y_test, test_predictions))
-print("\n분류 보고서:")
-print(classification_report(y_test, test_predictions))
-print(f"테스트 데이터 정확도: {accuracy_score(y_test, test_predictions):.3f}")
-
+#10. 최적 모델로 예측
 # 훈련 데이터 예측
-train_predictions = best_model.predict(X_train)
+train_result = best_model.predict(x_train)
 
-# 훈련 세트 성능 평가
-print("\n훈련 세트 성능 평가:")
-print("혼동 행렬:")
-print(confusion_matrix(y_train, train_predictions))
-print("\n분류 보고서:")
-print(classification_report(y_train, train_predictions))
-print(f"훈련 데이터 정확도: {accuracy_score(y_train, train_predictions):.3f}")
+# 테스트 데이터 예측
+result = best_model.predict(x_test)
 
-# 변수 중요도 시각화
-importances = best_model.feature_importances_
-feature_names = X.columns
+#11. 모델 평가
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-plt.figure(figsize=(10, 6))
-plt.bar(feature_names, importances)
-plt.title('Variable Importance')
-plt.xlabel('Features')
-plt.ylabel('Importance')
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.show()
+# 훈련 데이터 정확도
+train_accuracy = accuracy_score(y_train, train_result)
+print("Training Accuracy:", train_accuracy)
 
-예제5. xgboost 로 구현했을때
+# 테스트 정확도
+test_accuracy = accuracy_score(y_test, result)
+print("Test Accuracy:", test_accuracy)
 
-# 필요한 패키지 import
-import xgboost as xgb
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-import pandas as pd
-import numpy as np
+# 상세 평가 지표
+print("\nClassification Report:")
+print(classification_report(y_test, result))
 
-# 데이터 불러오기
-iris = pd.read_csv("d:/data/iris2.csv")
+print("\nConfusion Matrix:")
+print(confusion_matrix(y_test, result))
 
-# 특성(X)과 타겟(y) 분리
-X = iris.drop('Species', axis=1)
-y = iris['Species']
+Training Accuracy: 0.9677777777777777
+Test Accuracy: 0.76
 
-# 레이블 인코딩 (Species를 숫자로 변환)
-y = pd.factorize(y)[0]
+문제1. 위의 머신러닝 모델의 성능을 더 올리시오
 
-# 훈련/테스트 데이터 분할 (90:10)
-X_train, X_test, y_train, y_test = train_test_split(
-   X, y, test_size=0.1, random_state=1
-)
+답:
 
-print("훈련 데이터 shape:", X_train.shape)  # (135, 4)
-print("테스트 데이터 shape:", X_test.shape)  # (15, 4)
-
-# XGBoost 데이터셋 생성
-dtrain = xgb.DMatrix(data=X_train, label=y_train)
-dtest = xgb.DMatrix(data=X_test, label=y_test)
-
-# 하이퍼파라미터 설정
-params = {
-   'objective': 'multi:softmax',  # 다중 클래스 분류
-   'num_class': 3,               # 클래스 수
-   'max_depth': 3,              # 트리 최대 깊이
-   'eta': 0.3,                  # 학습률
-}
-
-# 모델 학습
-xgb_model = xgb.train(
-   params=params,
-   dtrain=dtrain,
-   num_boost_round=100,         # 부스팅 반복 횟수
-   evals=[(dtest, 'eval'), (dtrain, 'train')],
-   early_stopping_rounds=10,    # 10라운드 동안 성능 개선이 없으면 중단
-   verbose_eval=1              # 학습 과정 출력
-)
-
-# 예측
-predictions = xgb_model.predict(dtest)
-accuracy = accuracy_score(y_test, predictions)
-print(f"\nXGBoost 정확도: {accuracy:.4f}")
-
-# 변수 중요도 출력 (선택사항)
-importance = xgb_model.get_score(importance_type='gain')
-print("\n변수 중요도:")
-for key, value in importance.items():
-   print(f"{key}: {value}")
-
-# 특성 중요도 시각화 (선택사항)
-import matplotlib.pyplot as plt
-
-xgb.plot_importance(xgb_model)
-plt.title('Feature Importance')
-plt.show()
-
-문제1. wine2.csv 를 xboost 로 분류하시오 !
 
 
