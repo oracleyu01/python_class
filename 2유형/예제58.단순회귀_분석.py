@@ -52,6 +52,8 @@
    - 최소제곱법 (Least Squares Estimation, LSE): 선형 회귀 계수를 LSE로 추정하면, 
                                              가정이 만족될 경우 **불편추정량(unbiased estimator)**의 성질을 가집니다.
 
+    설명 그림 : https://thebook.io/080246/0431/
+     
 2.로지스틱 회귀 (Logistic Regression):
 
    - 목적: 종속변수가 범주형(예: 이진 분류)인 경우에 사용됩니다.
