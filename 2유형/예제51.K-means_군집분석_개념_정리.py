@@ -110,7 +110,7 @@ data = np.array([
 
 
 # 결과 시각화
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(4, 3))
 plt.scatter(data[:, 0], data[:, 1], c=kmeans.labels_)
 plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], 
             marker='*', s=200, c='red', label='Centroids')
