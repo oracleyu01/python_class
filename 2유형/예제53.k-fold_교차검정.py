@@ -120,7 +120,7 @@ K의 값 선택에 따라 평가 결과가 달라질 수 있습니다.
 
 ■ 실습1. 
 
-예제1. 아이리스 데이터를 k-hold 교차검정으로 
+예제1. 아이리스 데이터를 k-hold 교차검정으로 분류하시오
 
 # 필요한 패키지 import
 from sklearn.model_selection import train_test_split, KFold, cross_val_score
@@ -178,8 +178,6 @@ print(confusion_matrix(y_train, train_predictions))
 print("\n분류 보고서:")
 print(classification_report(y_train, train_predictions))
 
-# Wine 데이터셋에 대한 SVM 모델 적용
-from sklearn.svm import SVC
 
 
 문제1. wine 의 품질을 분류하는 머신러닝 모델을 k fold 교차검정으로 구현하시오 !
