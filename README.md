@@ -139,9 +139,9 @@ Python을 통한 데이터 분석은 이러한 능력을 개발하는 가장 접
 
 ### [3유형] 📊 통계적 분석 및 가설 검정 (SciPy, StatsModels)   
 
-- **예제57. 회귀분석1.상관관계 분석**: 
-- **예제58. 회귀분석2.단순회귀 분석**:  
-- **예제59. 회귀분석3.다중회귀 분석**:   
+- **예제57. 회귀분석1.상관관계 분석**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C57.%EC%82%B0%ED%8F%AC%EB%8F%84_%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80_%EC%83%81%EA%B4%80%EA%B3%84%EC%88%98.py)   
+- **예제58. 회귀분석2.단순회귀 분석**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C58.%EB%8B%A8%EC%88%9C%ED%9A%8C%EA%B7%80_%EB%B6%84%EC%84%9D.py)   
+- **예제59. 회귀분석3.다중회귀 분석**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/2%EC%9C%A0%ED%98%95/%EC%98%88%EC%A0%9C59.%EB%8B%A4%EC%A4%91%ED%9A%8C%EA%B7%80_%EB%B6%84%EC%84%9D.py)     
 - **예제60. 가설검정1.가설검정 용어 이해하기**: 
 - **예제61. 가설검정2.단일 모집단의 모평균 검정: 분산을 아는 경우(Z 검정)**: 
 - **예제62. 가설검정3.단일 모집단의 모평균 검정: 분산을 모르는 경우 (t 검정)**:
