@@ -119,30 +119,6 @@ plt.legend()
 plt.show()
 
 
-■ 실습2. 과일/음식 데이터 군집화
-
-data2 = np.array([
-    [10, 9],  # apple
-    [1, 4],   # bacon
-    [10, 1],  # banana
-    [7, 10],  # carrot
-    [3, 10],  # salary
-    [1, 1],   # cheese
-    [6, 7]    # tomato
-])
-
-# 3개 군집으로 분류
-
-
-# 시각화 
-
-plt.figure(figsize=(8, 6))
-plt.scatter(data2[:, 0], data2[:, 1], c=kmeans2.labels_)
-plt.scatter(kmeans2.cluster_centers_[:, 0], kmeans2.cluster_centers_[:, 1], 
-            marker='*', s=200, c='red', label='Centroids')
-plt.title('K-means Clustering (k=3)')
-plt.legend()
-plt.show()
 
 문제1. 학생 시험 점수 데이터로 k-means 모델을 만드시오 !
 
