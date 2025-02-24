@@ -131,8 +131,66 @@ rules = rules.sort_values('lift', ascending=False)
 print("\n연관규칙 분석 결과:")
 print(rules)
 
+실습2. 시각화 까지 구현 ?
 
-문제1.  건물 업종 데이터 분석
+import pandas as pd
+import numpy as np
+from mlxtend.frequent_patterns import apriori
+from mlxtend.frequent_patterns import association_rules
+import networkx as nx
+import matplotlib.pyplot as plt
+
+# 1. 기본 데이터 분석
+data1 = pd.DataFrame({
+    '빵': [0, 1, 0, 1, 1],
+    '계란': [0, 1, 0, 0, 0],
+    '우유': [1, 0, 1, 1, 1]
+})
+
+# 2. 장바구니 데이터
+basket_data = pd.DataFrame({
+    'beer': [0, 1, 1, 1, 0],
+    'bread': [1, 1, 0, 1, 1],
+    'cola': [0, 0, 1, 0, 1],
+    'diapers': [0, 1, 1, 1, 1],
+    'eggs': [0, 1, 0, 0, 0],
+    'milk': [1, 0, 1, 1, 1]
+})
+
+# 3. 연관규칙 분석
+# 빈발 항목 집합 찾기 (최소 지지도 0.2)
+frequent_itemsets = apriori(basket_data, min_support=0.2, use_colnames=True)
+
+# 연관규칙 생성 (최소 신뢰도 0.6)
+rules = association_rules(frequent_itemsets, metric="confidence", min_threshold=0.6)
+
+# 규칙 정렬 (lift 기준)
+rules = rules.sort_values('lift', ascending=False)
+print("\n장바구니 분석 결과:")
+print(rules)
+
+# 4. 연관규칙 시각화
+correlation_matrix = basket_data.T.dot(basket_data.T.T)
+np.fill_diagonal(correlation_matrix.values, 0)
+
+# 네트워크 그래프 생성
+G = nx.from_pandas_adjacency(correlation_matrix)
+
+plt.figure(figsize=(10, 8))
+pos = nx.spring_layout(G)
+nx.draw(G, pos,
+        node_color='lightblue',
+        node_size=[v * 1000 for v in dict(G.degree()).values()],
+        with_labels=True,
+        font_size=10,
+        font_weight='bold')
+
+plt.title("상품 연관성 네트워크")
+plt.show()
+
+
+
+문제1.  건물에 입점되어 있는 상점들간의 연관성을 분석하시오 !
 
 # 데이터 읽기
 building_data = pd.read_csv("building.csv", encoding='cp949')
