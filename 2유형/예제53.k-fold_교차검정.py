@@ -1,5 +1,4 @@
-■■ 예제53.k-fold_교차검정.py
-
+■■ 예제53.k-hold 교차검정_답
 
 그림: https://cafe.daum.net/oracleoracle/Sq8G/83
 
@@ -118,72 +117,152 @@ K의 값 선택에 따라 평가 결과가 달라질 수 있습니다.
 정답: 
 
 
-■ 실습1. 
+# ■ 실습1. 유방암 환자 분류 knn 모델 생성하는 for loop문으로 최적의 하이퍼 파라미터인 k값을 찾으시오
 
-예제1. 아이리스 데이터를 k-hold 교차검정으로 분류하시오
+#1. 데이터 로드
+import pandas  as  pd
 
-# 필요한 패키지 import
-from sklearn.model_selection import train_test_split, KFold, cross_val_score
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import confusion_matrix, classification_report
+wbcd = pd.read_csv("c:\\data\\wisc_bc_data.csv")
+wbcd.head()
+
+#2. 데이터 확인
+#wbcd.shape
+#wbcd.info()
+#3. 결측치 확인
+#wbcd.isnull().sum()
+
+#4. 정규화 작업
+#wbcd.describe()  # 기술 통계정보 
+
+from  sklearn.preprocessing import MinMaxScaler # 0~1 사이의 데이터로 변환
+#wbcd.head()
+wbcd2 = wbcd.iloc[ : , 2: ] 
+wbcd2.head()
+
+scaler = MinMaxScaler()  # 설계도로 scaler 라는 제품(객체)를 생성합니다. 
+wbcd2_scaled = scaler.fit_transform(wbcd2)
+wbcd2_scaled  # 스켈링된 학습 데이터 
+
+# 정답 데이터 생성 
+y = wbcd.loc[  : , 'diagnosis'].to_numpy()
+y
+
+# 데이터를 훈련 데이터와 테스트 데이터로 9 :1 로 분리합니다.
+from  sklearn.model_selection  import  train_test_split 
+
+x_train, x_test, y_train, y_test = train_test_split( wbcd2_scaled, y, test_size=0.1, random_state=1)
+# print(x_train.shape)  # 훈련 데이터
+# print(x_test.shape)   # 테스트 데이터
+# print(y_train.shape)  # 훈련 데이터의 정답 
+# print(y_test.shape)   # 테스트 데이터의 정답    
+
+#5. 모델 훈련
+from  sklearn.neighbors   import   KNeighborsClassifier 
+
+for i  in  range(1,20,2):
+    model = KNeighborsClassifier( n_neighbors= i )
+    model.fit( x_train, y_train )  
+    
+    #6. 모델 예측
+    result = model.predict(x_test) 
+    
+    #7. 모델 평가 
+    acc = sum( result == y_test ) / len(y_test) * 100
+    print( 'k가', i, '일때 정확도 ', acc)
+
+
+■ 실습2. 위의 k 값을 k fold 교참검정으로 찾으시오 !
+
+#1. 데이터 로드
 import pandas as pd
-import numpy as np
+wbcd = pd.read_csv("c:\\data\\wisc_bc_data.csv")
+wbcd.head()
 
-# 데이터 불러오기
-iris = pd.read_csv("iris2.csv")
+#2~3. (데이터 확인, 결측치 확인)
 
-# 특성(X)과 타겟(y) 분리
-X = iris.drop('Species', axis=1)
-y = iris['Species']
+#4. 정규화 작업
+from sklearn.preprocessing import MinMaxScaler 
+wbcd2 = wbcd.iloc[ : , 2: ] 
+scaler = MinMaxScaler()
+wbcd2_scaled = scaler.fit_transform(wbcd2)
 
-# 훈련/테스트 데이터 분할 (80:20)
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=123
-)
+# 정답 데이터 생성 
+y = wbcd.loc[ : , 'diagnosis'].to_numpy()
 
-print("훈련 데이터 shape:", X_train.shape)
-print("테스트 데이터 shape:", X_test.shape)
-
-# 10-fold 교차 검증 설정
-kfold = KFold(n_splits=10, shuffle=True, random_state=123)
-
-# 의사결정 트리 모델 생성
-dt_model = DecisionTreeClassifier(random_state=123)
-
-# 교차 검증 수행
-cv_scores = cross_val_score(dt_model, X_train, y_train, cv=kfold)
-print("\n교차 검증 점수:", cv_scores)
-print("평균 교차 검증 점수: {:.3f} (+/- {:.3f})".format(
-    cv_scores.mean(), cv_scores.std() * 2
-))
-
-# 최종 모델 학습 (전체 훈련 데이터 사용)
-dt_model.fit(X_train, y_train)
-
-# 테스트 데이터 예측
-test_predictions = dt_model.predict(X_test)
-
-# 테스트 세트 성능 평가
-print("\n테스트 세트 성능 평가:")
-print(confusion_matrix(y_test, test_predictions))
-print("\n분류 보고서:")
-print(classification_report(y_test, test_predictions))
-
-# 훈련 데이터 예측
-train_predictions = dt_model.predict(X_train)
-
-# 훈련 세트 성능 평가
-print("\n훈련 세트 성능 평가:")
-print(confusion_matrix(y_train, train_predictions))
-print("\n분류 보고서:")
-print(classification_report(y_train, train_predictions))
+#5. GridSearch로 최적의 k값 찾기
 
 
 
-문제1. wine 의 품질을 분류하는 머신러닝 모델을 k fold 교차검정으로 구현하시오 !
 
-답: 
 
-# 데이터 불러오기
-wine = pd.read_csv("wine2.csv")
+
+# 모델 훈련
+grid_search.fit(wbcd2_scaled, y)
+
+# 최적 파라미터와 점수 출력
+print("최적의 k값:", grid_search.best_params_['n_neighbors'])
+print("최고 정확도:", grid_search.best_score_)
+
+#6. 최적의 k값으로 최종 모델 생성 및 평가
+from sklearn.model_selection import train_test_split
+x_train, x_test, y_train, y_test = train_test_split(wbcd2_scaled, y, test_size=0.1, random_state=1)
+
+final_model = KNeighborsClassifier(n_neighbors=grid_search.best_params_['n_neighbors'])
+final_model.fit(x_train, y_train)
+result = final_model.predict(x_test)
+test_acc = sum(result == y_test) / len(y_test) * 100
+print(f"테스트 데이터 정확도: {test_acc:.2f}%")
+
+
+문제1.  wine.csv 에서 wine 의 품질을 분류하는 최적의 하이퍼 파라미터 k 값을 k fold 교차검정으로 찾으시오 !
+       아래의 코드를 활용하세요. 
+
+#1. 데이터 로드
+import pandas as pd
+wine = pd.read_csv("c:\\data\\wine2.csv")
+wine.head()
+
+#2. 데이터 확인
+#wine.shape
+#wine.info()
+
+#3. 결측치 확인
+#wine.isnull().sum()
+
+#4. 정규화 작업
+#wine.describe()  # 기술 통계정보 
+from sklearn.preprocessing import MinMaxScaler # 0~1 사이의 데이터로 변환
+#wine.head()
+wine2 = wine.iloc[ : , 1: ]  # Type 열을 제외한 나머지 특성들 선택
+wine2.head()
+scaler = MinMaxScaler()  # 설계도로 scaler 라는 제품(객체)를 생성합니다. 
+wine2_scaled = scaler.fit_transform(wine2)
+wine2_scaled  # 스켈링된 학습 데이터 
+
+# 정답 데이터 생성 
+y = wine.loc[ : , 'Type'].to_numpy()
+y
+
+# 데이터를 훈련 데이터와 테스트 데이터로 9:1로 분리합니다.
+from sklearn.model_selection import train_test_split 
+x_train, x_test, y_train, y_test = train_test_split(wine2_scaled, y, test_size=0.1, random_state=1)
+# print(x_train.shape)  # 훈련 데이터
+# print(x_test.shape)   # 테스트 데이터
+# print(y_train.shape)  # 훈련 데이터의 정답 
+# print(y_test.shape)   # 테스트 데이터의 정답    
+
+#5. 모델 훈련
+from sklearn.neighbors import KNeighborsClassifier 
+for i in range(1,20,2):
+    model = KNeighborsClassifier(n_neighbors=i)
+    model.fit(x_train, y_train)  
+    
+    #6. 모델 예측
+    result = model.predict(x_test) 
+    
+    #7. 모델 평가 
+    acc = sum(result == y_test) / len(y_test) * 100
+    print('k가', i, '일때 정확도 ', acc)
+
+
 
