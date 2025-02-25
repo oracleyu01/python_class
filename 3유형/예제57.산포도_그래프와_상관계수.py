@@ -122,13 +122,6 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('c:\\data\\usedcars.csv')
 
 # 수치형 변수들의 상관계수 계산
-corr = df[['year', 'price', 'mileage']].corr()
-print(corr)
-
-# 히트맵으로 상관계수 시각화
-plt.figure(figsize=(8, 6))
-sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
-plt.show()
 
 
 
@@ -157,22 +150,7 @@ import seaborn as sns
 # 데이터 로드
 df = pd.read_csv('c:\\data\\usedcars.csv')
 
-# 산포도 그래프 그리기
-plt.figure(figsize=(10, 6))
-sns.scatterplot(x='mileage', y='price', data=df)
 
-# 추세선 추가 (선형 회귀선)
-sns.regplot(x='mileage', y='price', data=df, scatter=False, color='red')
-
-# 그리드 추가
-plt.grid(True, linestyle='--', alpha=0.7)
-
-# 그래프 표시
-plt.show()
-
-# 상관계수 계산 및 출력
-correlation = df['mileage'].corr(df['price'])
-print(f"주행거리와 가격의 상관계수: {correlation:.4f}")
 
 
 😊문제2. 중고차의 연식과 가격과의 산포도 그래프를 그리시오 
