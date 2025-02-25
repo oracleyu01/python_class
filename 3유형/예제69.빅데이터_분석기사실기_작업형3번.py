@@ -1,6 +1,9 @@
 
 예제69: 빅데이터 분석 기사 실기 작업형 3번 문제 풀이]
 
+시험환경: https://dataq.goorm.io/exam/3/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%EC%B2%B4%ED%97%98/quiz/4%3Fembed
+
+
 문제 개요:
   - 타이타닉호 승객 데이터를 이용하여 생존 여부(Survived)와 관련된 통계적 분석을 수행하는 문제입니다.
   
