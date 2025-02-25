@@ -174,59 +174,12 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 
 # #1. 데이터를 불러옵니다.
 ins = pd.read_csv("insurance.csv")
-print(ins.head())
-print("행 개수:", len(ins))
 
-# #2. 데이터를 살펴봅니다.
-# 결측치가 있는지 조회
-print("결측치 개수:")
-print(ins.isnull().sum())
 
-print("데이터 요약 통계:")
-print(ins.describe())
 
-# 종속변수 분포 확인
-plt.figure(figsize=(10, 6))
-plt.hist(ins['expenses'], bins=30)
-plt.title('의료비 분포')
-plt.xlabel('의료비')
-plt.ylabel('빈도')
-plt.show()
 
-# 성별 비율
-print("성별 비율:")
-print(ins['sex'].value_counts(normalize=True))
 
-# 지역 비율
-print("지역 비율:")
-print(ins['region'].value_counts(normalize=True))
 
-# 흡연 여부
-print("흡연 여부:")
-print(ins['smoker'].value_counts(normalize=True))
-
-# BMI 분포
-plt.figure(figsize=(10, 6))
-plt.hist(ins['bmi'], bins=30)
-plt.title('BMI 분포')
-plt.xlabel('BMI')
-plt.ylabel('빈도')
-plt.show()
-
-# #3. 다중회귀 분석 모델을 생성합니다.
-# 범주형 변수를 더미 변수로 변환
-ins_encoded = pd.get_dummies(ins, columns=['sex', 'smoker', 'region'], drop_first=True)
-print("인코딩 후 데이터:")
-print(ins_encoded.head())
-
-# 종속변수와 독립변수 분리
-X = ins_encoded.drop('expenses', axis=1)
-y = ins_encoded['expenses']
-
-# statsmodels를 사용한 회귀분석 (R과 유사한 결과 출력)
-X_sm = sm.add_constant(X)
-model = sm.OLS(y, X_sm).fit()
-print(model.summary())
 
 # #4. 회귀분석 결과를 해석합니다.
 # 
@@ -245,38 +198,20 @@ print(model.summary())
 # 가설:
 #  귀무가설: 비만은 의료비에 영향이 없다.
 #  대립가설: 비만은 의료비에 영향이 있다. 
-ins['bmi30'] = np.where(ins['bmi'] >= 30, 1, 0)
-print(ins.head())
 
-# 새로운 데이터로 모델 생성
-ins_encoded2 = pd.get_dummies(ins, columns=['sex', 'smoker', 'region'], drop_first=True)
-X2 = ins_encoded2.drop('expenses', axis=1)
-y2 = ins_encoded2['expenses']
 
-X2_sm = sm.add_constant(X2)
-model2 = sm.OLS(y2, X2_sm).fit()
-print(model2.summary())
+
 
 # 파생변수2. 비만이면서 흡연하는 경우의 상호작용 변수 추가
 # 가설: 
 # 귀무가설: 비만이면서 흡연을 하는것은 의료비에 영향이 없다.
 # 대립가설: 비만이면서 흡연을 하는것은 의료비에 영향이 있다.
-ins['smokeryes_bmi30'] = np.where((ins['smoker'] == 'yes') & (ins['bmi30'] == 1), 1, 0)
-print("비만이면서 흡연자인 사람 수:", ins['smokeryes_bmi30'].sum())
 
-# 새로운 데이터로 모델 생성
-ins_encoded3 = pd.get_dummies(ins, columns=['sex', 'smoker', 'region'], drop_first=True)
-X3 = ins_encoded3.drop('expenses', axis=1)
-y3 = ins_encoded3['expenses']
 
-X3_sm = sm.add_constant(X3)
-model3 = sm.OLS(y3, X3_sm).fit()
-print(model3.summary())
 
 # 다음과 같이 모델을 생성해도 됩니다.
 # 상호작용항을 포함한 회귀분석 (R의 formula 방식과 유사)
-model4 = smf.ols(formula='expenses ~ age + children + bmi + C(smoker) + C(region) + bmi30*C(smoker)', data=ins).fit()
-print(model4.summary())
+
 
 ■ 문제1. 우주 왕복선 데이터를 다중회귀분석하여 o형링 파손에 가장 큰 영향을 주는 독립변수가 무엇인지 출력하시오 
 
