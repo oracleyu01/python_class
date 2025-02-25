@@ -32,150 +32,72 @@ x_test.to_csv("X_test.csv", index=False)
 
 # ■ 시험문제 풀기 시작
 
-# 1. 기계 학습 시킬 데이터를 불러옵니다.
-import pandas as pd
-X_test = pd.read_csv("X_test.csv")
-X_train = pd.read_csv("X_train.csv")
+#1. 데이터 불러오기
+import pandas  as  pd
+
+x_train = pd.read_csv("x_train.csv")
+x_test = pd.read_csv("x_test.csv")
 y_train = pd.read_csv("y_train.csv")
 
-# 2. 데이터를 정규화 합니다.
+#2. 데이터 살펴보기 
 
-# 훈련 데이터 정규화
-from  sklearn.preprocessing  import MinMaxScaler
+# 2.1 결측치 확인
+# print(x_train.isnull().sum())
+# print(x_test.isnull().sum())
 
-scaler=MinMaxScaler()
+# 2.2 문자형 데이터가 있는지 확인 
+# print(x_train.info())
+# print(x_test.info())
 
-scaler.fit(x_train)
-x_train2 = scaler.transform(x_train)
+#3. 데이터 인코딩하기(문자 --> 숫자)
+# 전부 숫자라서 할 필요 없습니다.
 
-# 테스트데이터 정규화
-from  sklearn.preprocessing  import MinMaxScaler
+#4. 데이터 스켈링하기
 
-scaler=MinMaxScaler()
+# 훈련 데이터 스켈링 
+from sklearn.preprocessing  import MinMaxScaler
+scaler = MinMaxScaler()
 
-scaler.fit(x_test)
-x_test2 = scaler.transform(x_test)
+scaler.fit(x_train)  # 훈련데이터로 계산
+x_train_scaled = scaler.transform(x_train)  # 훈련데이터 변환 
 
-# 3. 정답 데이터 만들기
-
-y = y_train['cancer']
-y
-
-# 4. 모델 생성
-
-from sklearn.ensemble import RandomForestClassifier
-
-model = RandomForestClassifier()
+# 테스트 데이터 스켈링 
+x_test_scaled = scaler.transform(x_test)  # 테스트 데이터 변환 
 
 
-# 5. 모델훈련
-model.fit(x_train2, y)
+#5. 모델 생성
+from sklearn.ensemble  import RandomForestClassifier
 
-# 6. 모델예측
-pred = model.predict(x_test2)
-pred
+model = RandomForestClassifier(random_state=1)
 
-# 7. 정답제출
+#6. 모델 훈련
+model.fit(x_train_scaled,y_train)
 
-# 답안 제출 참고
-# 아래 코드 예측변수와 수험번호를 개인별로 변경하여 활용
-# pd.DataFrame({'cust_id': X_test.cust_id, 'label': pred }).to_csv('003000000.csv', index=False)
-pd.DataFrame({'cust_id': X_test.cust_id, 'label': pred }).to_csv('003000000.csv', index=False)
+#7. 모델 예측
+# 훈련 데이터 예측
+train_pred = model.predict(x_train_scaled) 
 
-# 8. 모델평가
-from sklearn.metrics import roc_auc_score
+# 테스트 데이터 예측
+pred = model.predict(x_test_scaled) 
 
-y_hat = model.predict(x_train2)
-print( roc_auc_score(y, y_hat))
+#8. 모델 평가 (훈련 데이터에 대해서만) 
+from sklearn.metrics  import  accuracy_score
 
+print(accuracy_score(y_train, train_pred))
 
+#9. 테스트 예측결과 제출 
+pd.DataFrame({'pred' : pred }).to_csv("result.csv", index=False)
 
+import  pandas  as  pd
 
-# 😊 문제:
+result = pd.read_csv("result.csv")
+print(result)
 
-자동차의 연비 예측을 위해 주어진 데이터셋을 활용하여 모델을 구축하세요.
-데이터셋은 각 자동차의 특성(예: 차량_연식, 주행거리, 연료비, 엔진 크기, 차량 무게)을 포함하고 있습니다.
-연비는 세 가지 범주로 분류됩니다.
-
-1. 고연비: 매우 경제적인 차량
-2. 중간연비: 적당한 경제성을 가진 차량
-3. 저연비: 경제적이지 않은 차량
-
-모델의 평가는 f1 score 로 평가됩니다.
-
-# 주어진 데이터 :
-
-훈련 데이터: train.csv
-테스트 데이터 : test.csv
-
-# 제출 형식
-
-pred
-중간연비
-중간연비
-중간연비
-중간연비
-저연비
-중간연비
-중간연비
-저연비
-저연비
-중간연비
-
-가상의 데이터 만들기:
-
-import pandas as pd
-import numpy as np
-
-# 1. 가상 데이터 생성
-np.random.seed(42)
-n_samples = 1000
-
-# 변수 생성
-차량_연식 = np.random.randint(2000, 2021, n_samples)
-주행거리 = np.random.randint(5000, 100000, n_samples)  # 상한선 줄임
-연료비 = np.random.randint(50, 100, n_samples)  # 경제성 반영
-엔진_크기 = np.random.randint(1000, 2000, n_samples)  # 작은 엔진 크기
-차량_무게 = np.random.randint(800, 1500, n_samples)  # 가벼운 차량
-
-# 연비를 다중 분류로 수정 ('고연비', '중간연비', '저연비')
-연비 = np.where(
-    (연료비 < 70) & (주행거리 < 50000) & (엔진_크기 < 1500) & (차량_무게 < 1200),
-    '고연비',
-    np.where((연료비 < 90) & (주행거리 < 70000), '중간연비', '저연비')
-)
-
-# 데이터 프레임 생성
-data = {
-    '차량_연식': 차량_연식,
-    '주행거리': 주행거리,
-    '연료비': 연료비,
-    '엔진 크기': 엔진_크기,
-    '차량 무게': 차량_무게,
-    '연비': 연비
-}
-
-df = pd.DataFrame(data)
-
-# 2. 학습 데이터 CSV 파일로 저장 (train.csv)
-df.to_csv('train.csv', index=False)
-
-# 3. 테스트 데이터 생성 (연비 제외)
-n_samples = 500
-test_data = {
-    '차량_연식': np.random.randint(2000, 2021, n_samples),
-    '주행거리': np.random.randint(5000, 100000, n_samples),
-    '연료비': np.random.randint(50, 100, n_samples),
-    '엔진 크기': np.random.randint(1000, 2000, n_samples),
-    '차량 무게': np.random.randint(800, 1500, n_samples)
-}
-
-df_test = pd.DataFrame(test_data)
-
-# 4. 테스트 데이터 CSV 파일로 저장 (test.csv)
-df_test.to_csv('test.csv', index=False)
+# 42분까지 쉬세요
 
 
-답:
+
+# 😊 문제: 시험환경에 백화점 데이터의 성별 예측 분류 모델을 생성하고 제출하시오
+
 
 
