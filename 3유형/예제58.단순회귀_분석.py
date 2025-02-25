@@ -90,6 +90,8 @@
   - 기울기(a): X가 1 증가할 때 Y가 변하는 평균적인 값.  
   - 절편(b): X가 0일 때 Y의 예상값.  
 
+ 🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/단순회귀귀.png
+     
 🔹 다중 선형 회귀(Multiple Linear Regression)  
   - 독립변수가 여러 개인 경우.  
   - 회귀식:  
