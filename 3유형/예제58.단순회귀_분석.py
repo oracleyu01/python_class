@@ -126,6 +126,8 @@
   - 잔차 제곱합(SSE, Sum of Squared Errors)을 최소화하는 기법.  
   - 최적의 회귀계수를 찾는 데 사용됨.  
 
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/최소제곱법.png
+     
 ✅ 결정계수(R², Coefficient of Determination)  
   - 모델의 설명력을 나타내는 지표로 0에서 1 사이 값을 가짐.  
   - R² = 1 - (SSE / SST)  
