@@ -111,29 +111,10 @@ from statsmodels.formula.api import ols
 df = pd.read_csv("c:\\data\\regression.txt", sep="\s+")
 print(df.head())
 
-# 2. 회귀모델을 생성합니다.
-# sklearn 방식
-X = df[['tannin']]
-y = df['growth']
-model = LinearRegression().fit(X, y)
 
-# 회귀 계수와 절편 출력
-print("회귀 계수:", model.coef_[0])
-print("절편:", model.intercept_)
-print("결정계수 (R²):", model.score(X, y))
 
-# statsmodels를 이용한 상세 통계 결과
-model_stats = ols('growth ~ tannin', data=df).fit()
-print(model_stats.summary())
 
-# 3. 생성한 회귀모델로 탄닌 함유량이 10일 때 성장률을 예측합니다.
-new_data = pd.DataFrame({'tannin': [10]})
-prediction = model.predict(new_data)
-print(f"탄닌 함유량이 10일 때 예측 성장률: {prediction[0]:.4f}")
 
-# statsmodels를 이용한 예측 (대안 방법)
-prediction_stats = model_stats.predict(pd.DataFrame({'tannin': [10]}))
-print(f"statsmodels 이용 예측 성장률: {prediction_stats[0]:.4f}")
 
 
 😊문제1.  광고비와 매출간의 단순 회귀 분석 모델을 생성하고
