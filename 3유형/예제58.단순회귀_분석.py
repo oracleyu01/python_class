@@ -9,14 +9,16 @@
 =============================================================================
 📌 1. 공분산(Covariance)이란?
 =============================================================================
-
+   
 - 두 변수 X와 Y가 함께 변화하는 정도를 나타내는 값.
 - 수식: Cov(X, Y) = (1/n) * Σ (X_i - X̄)(Y_i - Ȳ)
 - 공분산이 양수 → X 증가 시 Y도 증가하는 경향.
 - 공분산이 음수 → X 증가 시 Y는 감소하는 경향.
 - 공분산이 0에 가까움 → X와 Y 사이의 선형 관계가 약함.
 
-하지만, 공분산은 단위(scale)에 따라 값이 달라지므로 표준화한 값이 필요함.
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/공분산.png
+   
+공분산은 단위(scale)에 따라 값이 달라지므로 표준화한 값이 필요함.
 
 ✅ 상관계수(Correlation Coefficient)
 - 수식: r = Cov(X, Y) / (σ_X * σ_Y)
@@ -33,6 +35,8 @@
 - 기울기 a = Cov(X, Y) / Var(X)
 - Cov(X, Y): X와 Y의 공분산
 - Var(X): X의 분산 (Var(X) = (1/n) * Σ (X_i - X̄)²)
+
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/단순회귀.png
 
 ✅ 공분산과 회귀분석의 관계 요약
 
@@ -89,8 +93,6 @@
     Y = aX + b  
   - 기울기(a): X가 1 증가할 때 Y가 변하는 평균적인 값.  
   - 절편(b): X가 0일 때 Y의 예상값.  
-
- 🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/단순회귀귀.png
      
 🔹 다중 선형 회귀(Multiple Linear Regression)  
   - 독립변수가 여러 개인 경우.  
@@ -116,7 +118,9 @@
 
 ✅ 잔차(Residual)  
   - 실제 값과 회귀모델의 예측 값 간 차이.  
-  - 잔차가 작을수록 모델이 데이터를 잘 설명함.  
+  - 잔차가 작을수록 모델이 데이터를 잘 설명함.
+
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/단순회귀.png
 
 ✅ 최소제곱법(Least Squares Method, LSE)  
   - 잔차 제곱합(SSE, Sum of Squared Errors)을 최소화하는 기법.  
