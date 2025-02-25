@@ -127,7 +127,7 @@
   - SSE (Sum of Squared Errors, 잔차 제곱합) : 모델이 예측하지 못한 오차의 크기.
   - SST (Total Sum of Squares, 총 변동합) : 데이터의 전체 변동성을 나타내는 값
 
-  그림: https://github.com/oracleyu01/python_class/blob/main/3유형/결정계수.png
+  🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/결정계수.png
 
 ✅ 다중공선성(Multicollinearity)  
   - 독립변수 간 상관관계가 높으면 회귀모델의 신뢰성이 낮아짐.  
