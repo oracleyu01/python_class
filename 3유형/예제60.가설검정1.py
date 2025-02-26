@@ -27,6 +27,9 @@
 --------------------------------
 [오류의 종류]
 
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/1종오류.png
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/2종오류.png
+                       
 1. 제1종 오류 (Type I Error):
    - 정의:
        실제로 귀무가설이 참인데, 이를 잘못 기각하는 오류.
@@ -49,6 +52,8 @@
 --------------------------------
 [가설검정 절차 요약]
 
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/검정통계량.png
+                       
 1. 가설 설정: 귀무가설(H0)과 대립가설(H1) 설정.
 2. 유의수준 결정: 일반적으로 0.05 또는 0.01 등.
 3. 검정통계량 계산: 데이터로부터 검정통계량 산출.
