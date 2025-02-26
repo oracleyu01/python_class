@@ -17,7 +17,7 @@
 📌 상관계수 (Correlation Coefficient)
 =============================================================================
 
-🎨 상관계수 개념 그림: https://github.com/oracleyu01/python_class/blob/main/3유형/상관계수.png
+🎨 상관계수 그림: https://github.com/oracleyu01/python_class/blob/main/3유형/상관계수.png
 
 ✅ 정의  
 - 상관계수는 두 변수 간의 관계의 방향(양/음)과 강도(강한/약한)를 나타내는 통계적 지표  
