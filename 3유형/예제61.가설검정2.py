@@ -67,6 +67,7 @@
 
 정답: 
 
+해설설명: https://github.com/oracleyu01/python_class/blob/main/3유형/z값.png
 
 
 문제1. 어떤 공장에서 생산되는 제품의 무게는 평균이 500g이고 표준편차가 10g인 정규분포를 따른다고 한다. 
