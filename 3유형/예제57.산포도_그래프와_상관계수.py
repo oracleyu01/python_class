@@ -1,7 +1,6 @@
 ■■  예제57.산포도_그래프와_상관계수.py
 
 
-
 ■ 두 변수간의 관계를 분석할 때 사용하는 분석 방법
   
   1. 수치형 : 두변수가 모두 숫자일 때
@@ -16,6 +15,8 @@
 
 
 ■ 상관계수 (Correlation Coefficient)
+
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/상관계수.png
 
  1. 정의:
 
