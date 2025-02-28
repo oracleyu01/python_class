@@ -27,8 +27,8 @@
 --------------------------------
 [오류의 종류]
 
-🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/1종오류.png
-🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/2종오류.png
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/그림/1종오류.png
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/그림/2종오류.png
                        
 1. 제1종 오류 (Type I Error):
    - 정의:
@@ -52,7 +52,7 @@
 --------------------------------
 [가설검정 절차 요약]
 
-🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/검정통계량.png
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/그림/검정통계량.png
                        
 1. 가설 설정: 귀무가설(H0)과 대립가설(H1) 설정.
 2. 유의수준 결정: 일반적으로 0.05 또는 0.01 등.
