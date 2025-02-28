@@ -15,7 +15,7 @@
 - 공분산이 음수 → X 증가 시 Y는 감소하는 경향.
 - 공분산이 0에 가까움 → X와 Y 사이의 선형 관계가 약함.
 
-🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/공분산.png
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/그림/공분산.png
    
 공분산은 단위(scale)에 따라 값이 달라지므로 표준화한 값이 필요함.
 
@@ -125,7 +125,7 @@
   - 잔차 제곱합(SSE, Sum of Squared Errors)을 최소화하는 기법.  
   - 최적의 회귀계수를 찾는 데 사용됨.  
 
-🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/최소제곱법.png
+🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/그림/최소제곱법.png
      
 ✅ 결정계수(R², Coefficient of Determination)  
   - 모델의 설명력을 나타내는 지표로 0에서 1 사이 값을 가짐.  
@@ -134,7 +134,7 @@
   - SSE (Sum of Squared Errors, 잔차 제곱합) : 모델이 예측하지 못한 오차의 크기.
   - SST (Total Sum of Squares, 총 변동합) : 데이터의 전체 변동성을 나타내는 값
 
-🎨그림: https://github.com/oracleyu01/python_class/blob/main/3유형/결정계수.png
+🎨그림:https://github.com/oracleyu01/python_class/blob/main/3유형/그림/결정계수.png
 
 ✅ 다중공선성(Multicollinearity)  
   - 독립변수 간 상관관계가 높으면 회귀모델의 신뢰성이 낮아짐.  
