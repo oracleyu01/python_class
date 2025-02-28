@@ -71,7 +71,7 @@
 
 정답:  2
 
-해설설명: https://github.com/oracleyu01/python_class/blob/main/3유형/z값.png
+해설설명: https://github.com/oracleyu01/python_class/blob/main/3유형/그림/z값.png
 
 파이썬으로 위의 문제의 답을 확인하고 싶다면  다음과 같이 코딩합니다.
 
