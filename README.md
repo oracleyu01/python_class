@@ -159,28 +159,28 @@ Python을 통한 데이터 분석은 이러한 능력을 개발하는 가장 접
 
 ### [파이썬 필수 문법] 🔤 파이썬 사용시 꼭 알아야하는 필수 문법
 
-- **예제71.파이썬 자료형 5가지**  
-- **예제72.파이썬 들여쓰기 배우기**
-- **예제73.if 개념 배우기 ① (if~else)**
-- **예제74.if 개념 배우기 ② (if~elif)**
-- **예제75.for loop 문**
-- **예제76.for loop 문 + 카운트 하기**
-- **예제77.for loop 문 + continue 문**
-- **예제78.for loop 문 + break 문**
-- **예제79.이중 for  loop문**
-- **예제80.while loop문**
-- **예제81.연산자 축약 이해하기**
-- **예제82.문자열 함수 총정리**
-- **예제83.리스트 함수 총정리**
-- **예제84.딕셔너리 함수 총정리**
-- **예제85.파이썬 함수 생성하기**
-- **예제86.지역변수와 전역변수 이해하기**
-- **예제87.한줄짜리 이름없는 함수 만들기(lambda)**
-- **예제88.한줄로 코딩하기 comprehension**
-- **예제89.파이썬 모듈 이해하기**
-- **예제90.파이썬 패키지 이해하기**
-- **예제91.예외처리 이해하기 (try~except)**  
-- **예제92.클래스 이해하기**
+- **예제71.파이썬 자료형 5가지** : 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제71.py)  
+- **예제72.파이썬 들여쓰기 배우기**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제72.py)  
+- **예제73.if 개념 배우기 ① (if~else)**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제73.py)  
+- **예제74.if 개념 배우기 ② (if~elif)**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제74.py)  
+- **예제75.for loop 문**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제75.py)  
+- **예제76.for loop 문 + 카운트 하기**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제76.py)  
+- **예제77.for loop 문 + continue 문**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제77.py)  
+- **예제78.for loop 문 + break 문**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제78.py)  
+- **예제79.이중 for  loop문**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제79.py)  
+- **예제80.while loop문**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제80.py)  
+- **예제81.연산자 축약 이해하기**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제81.py)  
+- **예제82.문자열 함수 총정리**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제82.py)  
+- **예제83.리스트 함수 총정리**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제83.py)  
+- **예제84.딕셔너리 함수 총정리**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제84.py)  
+- **예제85.파이썬 함수 생성하기**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제85.py)  
+- **예제86.지역변수와 전역변수 이해하기**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제86.py)  
+- **예제87.한줄짜리 이름없는 함수 만들기(lambda)**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제87.py)  
+- **예제88.한줄로 코딩하기 comprehension**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제88.py)  
+- **예제89.파이썬 모듈 이해하기**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제89.py)  
+- **예제90.파이썬 패키지 이해하기**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제90.py)  
+- **예제91.예외처리 이해하기 (try~except)**  : 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제91.py)  
+- **예제92.클래스 이해하기**: 📄[노트](https://github.com/oracleyu01/python_class/blob/main/파이썬/예제92.py)  
 
  ### [데이터 수집] 🕸️ 인공지능의 원유 데이터 수집 파이썬 웹스크롤링
  
