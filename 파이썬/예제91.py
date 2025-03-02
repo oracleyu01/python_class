@@ -17,12 +17,7 @@
 
 예제1:  try ~ except 를 사용해서 예외처리를 하지 않았을 때의 코드
 
-def  my_divide():
-    x = input('분자의 숫자를 입력하세요 ~')
-    y = input('분모의 숫자를 입력하세요 ~')
-    return  int(x) / int(y)
 
-print(  my_divide() ) 
 
 분자의 숫자를 입력하세요 ~10
 
@@ -32,13 +27,6 @@ ZeroDivisionError: division by zero
 
 예제2. try ~except 를 사용했을 때의 예제 
 
-def  my_divide():
-    try:
-        x = input('분자의 숫자를 입력하세요 ~')
-        y = input('분모의 숫자를 입력하세요 ~')
-        return  int(x) / int(y)
-    except:
-        return '당황하셨겠지만 잘못된 값을 입력하셔서 나누기를 할 수 없습니다.'
 
 설명:  try 와 except 사이에 코드가 잘 실행이 된다면 except 이후의 
        문장은 실행하지 않고 try 와 except 사이에 코드가 실행이 안된다면
@@ -60,8 +48,6 @@ print(  my_divide() )
    4 
 
 답:  
-num = int( input( '숫자를 입력하세요 ~ ') )
-print ( num**2 )
 
 문제1.  try ~ except 예외처리를 이용해서 아래와 같이
              문자를 입력하면 '잘못된 값을 입력하셨습니다' 라는 메세지가
@@ -70,12 +56,8 @@ print ( num**2 )
 숫자를 입력하세요 ~   a
 
 잘못된 값을 입력하셨습니다. 
-                                                    45분까지 쉬세요 ~~
-try:
-    num = int( input('숫자를 입력하세요' ) )
-    print ( num**2 )
-except:
-    print('잘못된 값을 입력하셨습니다')
+
+
 
 설명: try 와 except 사이의 있는 코드에서 에러가 나야지만 
        except 이후의 문장을 실행합니다. 
@@ -95,13 +77,7 @@ except:
 
 예제1.  
 
-try:
-    num = int( input('숫자를 입력하세요' ) )
-    print ( num**2 )
-except:
-    print('잘못된 값을 입력하셨습니다')
-else:
-    print('결과 출력에 성공했습니다')
+
 
 설명:  try ~ except 사이의 코드에 에러가 안났다면 else: 이후의 문장을 
         실행합니다. 
@@ -124,14 +100,7 @@ else:
 
 답:
 
-try:
-    x = input('분자의 숫자를 입력하세요 ~')
-    y = input('분모의 숫자를 입력하세요 ~')
-    print  (int(x) / int(y) )
-except:
-    print( '당황하셨겠지만 잘못된 값을 입력하셔서 나누기를 할 수 없습니다.')
-else:
-    print ( '성공적으로 나누기를 하였습니다' )
+
 
 ▣ 예제91_3. 예외처리 이해하기 ③ (try~except~finally)
 
@@ -157,12 +126,5 @@ else:
 이준혁이 만든 프로그램입니다.        이준혁이 만든 프로그램입니다.
 
 답:
-try:
-    x = int( input('분자의 숫자를 입력하세요') )
-    y = int( input('분모의 숫자를 입력하세요') )
-    print( x / y )
-except:
-    print ('나누기를 할 수 없습니다.')
-finally:
-    print ('이준혁이 만든 프로그램입니다')
+
 
