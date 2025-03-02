@@ -15,6 +15,8 @@ print( result )
 
 답:
 
+
+
 추가문제2.   아래의 리스트를 받아서 아래의 결과로 출력되게하시오 !
 
 numbers = [ 1, 2, 3, 4, 5 ]
@@ -25,28 +27,15 @@ print(result)
 ['홀수', '짝수', '홀수', '짝수', '홀수' ]
 
 답:
-numbers = [ 1, 2, 3, 4, 5 ]
-
-def  check_even(num):
-    if  num % 2 == 0:
-        return '짝수'
-    else:
-        return '홀수'
-
-result = list(map( check_even, numbers) )
-print(result)
 
 추가문제3. 위의 코드를 람다를 이용한 코드로 변경하시오 !
-               ( comprehension 을 활용을 해서 수행을 해야합니다.)
+         ( comprehension 을 활용을 해서 수행을 해야합니다.)
 
-numbers = [ 1, 2, 3, 4, 5 ]
 
-result = list( map( lambda  num : '짝수'  if  num % 2 == 0 else  '홀수', numbers) )
 
-print( result )
 
 추가문제4.  아래의 numbers 리스트의 요소들을 아래의 결과로 출력하시오 !
-               ( 람다 사용하지 않고 수행)
+           ( 람다 사용하지 않고 수행)
 
 numbers = [ -3, 0, 7, -1, 5, 0, -8 ]
 
@@ -74,11 +63,5 @@ print(result)
 ['짝수', '홀수', '0', '짝수', '홀수', '0', '홀수' ]
 
 답:
-# 원본 리스트
-numbers = [4, 5, 0, 12, 3, 0, 7]
 
-result = list(map(lambda num: '0' if num == 0 else ('짝수' if num % 2 == 0 else '홀수'), numbers))
-
-# 결과 출력
-print(result)  # 출력: ['짝수', '홀수', '0', '짝수', '홀수', '0', '홀수']
 
