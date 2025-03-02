@@ -15,33 +15,20 @@
 
 예제. 전역변수와 지역변수의 사용예
 
-a ='scott'    # 전역변수
 
-def  func12():
-    b='allen'  # 지역변수
-    return  b 
+
+
 
 예제. 전역변수의 사용예
 
 pi = 3.1415926
 
-def  cycle_func1(num1):  # 원의 넓이를 구하는 함수
-    global  pi                 # 함수내에서 전역변수를 쓰려면 앞에 global 을 붙입니다.
-    return  pi * num1 * num1 
 
-def  cycle_func2(num2):  # 부채꼴의 넓이를 구하는 함수
-    global  pi 
-    return  1/4 * pi * num2 * num2
+
 
 ※ 설명: 전역변수가 필요한 이유는 원주율 처럼 어느 함수에서 사용하든 절대로 
            일관된 데이터를 사용해야할 때 필요합니다.
 
-def  cycle_func1(num1):  # 원의 넓이를 구하는 함수
-    pie=3.14
-    return  pi * num1 * num1 
 
-def  cycle_func2(num2):  # 부채꼴의 넓이를 구하는 함수
-    pie=3.14159
-    return  1/4 * pi * num2 * num2
 
 위와 같이 pi를 지역변수로 사용하게 되면 미세한 계산 차이가 발생하게 됩니다. 
