@@ -11,11 +11,8 @@
  홀수 입니다.
 
 답:
-a = int( input(' 숫자를 입력하세요 ~  ' ) )
-if  a %  2 == 0:
-    print('짝수입니다.')
-else:
-    print('홀수입니다.')
+
+
 
 경험이 많은 파이썬 사용자들은 자기가 자주 쓰는 함수들을 모듈로 만들어서
 저장하고 불러 옵니다.  시간 절약하려고 모듈로 만듭니다.
@@ -46,10 +43,10 @@ check_number(0)
 
 yys.py 에 반영했으면 커널을 restart 해주셔야 반영됩니다. 
 
-42분까지 쉬세요 ~
+
 
 함수 생성 문제3.  import  yys 를 실행했을때 yys.py 에 있는 함수 목록이 출력되게
-                      하시오 !
+                 하시오 !
 
 yys.py  스크립트 맨아래에 아래의 코드를 추가합니다. 
 
@@ -63,21 +60,6 @@ def check_even_odd(number):
 
 #2. 양수인지 음수인지 판정하는 함수
 
-def check_number(num):
-    if  num > 0:
-        return  "양수 입니다."
-    elif  num < 0 :
-        return  "음수 입니다."
-    else:
-        return "0 입니다."
-
-if __name__ != "__main__":
-    print("yys 모듈이 임폴트 되었습니다.")
-    print("함수 목록")
-    print("1. check_even_odd : 짝수와 홀수 판정 함수")
-    print("2. check_number : 양수 음수 판정하는 함수")
-else:
-    print("yys.py 가 직접 실행되었습니다.")
 
 
 
