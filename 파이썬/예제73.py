@@ -20,46 +20,22 @@ else:                  # 만약 조건1 이 False 라면
 
 예제2. 10을 2로 나눈 나머지값을 출력하시오 !
 
-10 % 2
+
 
 예제3. 주사위를 10번 던지는데 주사위의 눈이 짝수 일때만 출력하시오 !
 
-import random
-dice = [ 1, 2, 3, 4, 5, 6 ]
 
-for  i  in  range(10):            #  아래의 실행문을 10번 반복하는데
-    a = random.choice(dice)  #  주사위를 던져서 주사위의 눈이
-    if  a % 2 == 0:              #  짝수면
-        print(a)                    #  출력해라 
 
 예제4. 주사위를 20번 던져서 홀수 일때만 출력하시오 !
 
-import random
-dice = [ 1, 2, 3, 4, 5, 6 ]
 
-for  i  in  range(20):            
-    a = random.choice(dice)  
-    if  a % 2 == 1:             
-        print(a)      
+
 
 예제5. if ~ else 문을 사용해서 주사위의 눈을 출력할 때
-        이 눈이 짝수인지 홀수 인지가 같이 출력되게 하시오 !
+       이 눈이 짝수인지 홀수 인지가 같이 출력되게 하시오 !
 
-import random
-dice = [ 1, 2, 3, 4, 5, 6 ]
 
-for  i  in  range(20):            
-    a = random.choice(dice)  
-    if  a % 2 == 0:             
-        print(a, '는 짝수 입니다')      
-    else:
-        print(a, '는 홀수 입니다')
         
 문제1. 동전을 10번 던져서 아래와 같이 출력되게하시오 !
 
-import random
-coin = ['앞면', '뒷면']
 
-for i in range(10):
-    a = random.choice(coin)
-    print( a, ' 입니다')
