@@ -1,4 +1,3 @@
-
 예제69: 빅데이터 분석 기사 실기 작업형 3번 문제 풀이]
 
 시험환경: https://dataq.goorm.io/exam/3/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D%EA%B8%B0%EC%82%AC-%EC%8B%A4%EA%B8%B0-%EC%B2%B4%ED%97%98/quiz/4%3Fembed
@@ -45,3 +44,14 @@
   - 결과는 지정된 반올림 자리수(소수 셋째 자리)로 출력합니다.
   
 작성하시오.
+
+import pandas as pd
+import numpy as np
+from scipy.stats import chi2_contingency
+import statsmodels.api as sm
+import math
+
+# 데이터 불러오기
+
+df = pd.read_csv('data/Titanic.csv')
+
