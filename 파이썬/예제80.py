@@ -16,18 +16,15 @@
 
 예제2.  1 ~ 10번까지 출력하는 while loop 문을 수행하시오 !
 
-x = 1
-while  x < 11:
-    print(x)
-    x = x + 1 
+
+
 
 예제3.  위의 예제에서 x = x + 1 을 빼고 수행하면 어떻게 되겠는가 ?
 
 작업관리자를 먼저 엽니다. 
 
-x = 1
-while  x < 11:
-    print(x)
+
+
 
 while  loop 문을 작성할 때 무한 루프가 돌아가지않도록 주의 해서 코딩하셔야합니다.
 
@@ -55,9 +52,5 @@ while True:
      
    앞의 코드들 .... 
 
-    print(  '당신의 mbti 는 '  +  result   + ' 입니다'   )
-
-    stop = input('중지 시키겠습니까? (yes or no): ')
-    if stop=='yes':
-        break
+ 
 
