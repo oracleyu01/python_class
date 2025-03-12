@@ -93,3 +93,83 @@ def 함수이름(매개변수1, 매개변수2, ...):
 - **유지보수의 용이성**: 함수를 수정하면 전체 코드가 변경되므로, 관리가 쉬움.
 
 이렇게 함수를 활용하면 코드가 간결하고 효율적으로 작성될 수 있다.
+
+### **문제 1: 코드의 재사용성 문제**  
+다음 코드는 세 개의 원의 넓이를 구하는 코드입니다. 중복되는 부분을 줄이기 위해 함수를 사용하여 개선하세요.
+
+#### **문제 코드 (함수 없이 작성됨)**  
+   
+```python
+radius1 = 3
+radius2 = 5
+radius3 = 7
+
+area1 = 3.14 * radius1 ** 2
+area2 = 3.14 * radius2 ** 2
+area3 = 3.14 * radius3 ** 2
+
+print(f"반지름 {radius1}인 원의 넓이: {area1}")
+print(f"반지름 {radius2}인 원의 넓이: {area2}")
+print(f"반지름 {radius3}인 원의 넓이: {area3}")
+```
+
+---
+
+#### **정답 코드 (함수를 사용하여 개선)**
+
+
+
+   
+---
+
+### **문제 2: 코드의 가독성 문제**  
+다음 코드는 두 학생의 시험 평균 점수를 계산하는 코드입니다. 가독성을 높이기 위해 함수를 사용하여 개선하세요.
+
+#### **문제 코드 (함수 없이 작성됨)**  
+```python
+student1_name = "철수"
+student1_scores = [90, 85, 80]
+student1_avg = sum(student1_scores) / len(student1_scores)
+print(f"{student1_name}의 평균 점수: {student1_avg}")
+
+student2_name = "영희"
+student2_scores = [88, 92, 79]
+student2_avg = sum(student2_scores) / len(student2_scores)
+print(f"{student2_name}의 평균 점수: {student2_avg}")
+```
+
+---
+
+#### **정답 코드 (함수를 사용하여 개선)**
+
+
+
+   
+
+---
+
+### **문제 3: 유지보수의 용이성 문제**  
+다음 코드는 직사각형의 둘레를 계산하는 코드입니다. 유지보수를 쉽게 하기 위해 함수를 사용하여 개선하세요.
+
+#### **문제 코드 (함수 없이 작성됨)**  
+```python
+length1 = 6
+width1 = 4
+perimeter1 = 2 * (length1 + width1)
+print(f"가로 {length1}, 세로 {width1}인 직사각형의 둘레: {perimeter1}")
+
+length2 = 10
+width2 = 8
+perimeter2 = 2 * (length2 + width2)
+print(f"가로 {length2}, 세로 {width2}인 직사각형의 둘레: {perimeter2}")
+```
+
+---
+
+#### **정답 코드 (함수를 사용하여 개선)**
+
+
+   
+---
+
+이렇게 하면 코드가 더 **재사용 가능하고, 가독성이 좋아지며, 유지보수가 쉬운** 구조로 변합니다!
