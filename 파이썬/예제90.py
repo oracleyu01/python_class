@@ -16,6 +16,20 @@ c:\\Users\\ITWILL\my_loc
 
 2. my_loc 폴더 안에  yu_auto.py 를  옮겨 놓는다. 
 
+yu_auto.py 의 내용:
+
+def  add_number(n1, n2):
+    result = n1 + n2 
+    return  result
+
+def  minus_number(n1, n2):
+    result = n1 - n2
+    return  result
+
+def  gob_number( n1, n2 ):
+    result = n1 * n2
+    return  result
+
 
 3.  이 평범한 폴더가 패키지로 인정을 받으려면 반드시 갖고 있어야하는
      파일이 있습니다.  그 파일이 __init__.py 라는 파일입니다. 
