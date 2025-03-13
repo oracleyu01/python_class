@@ -10,18 +10,18 @@
 
 1. 아래의 디렉토리에 my_loc 라는 폴더를 생성한다. 
 
-c:\\Users\\stu  
+c:\\Users\\ITWILL  
 
-c:\\Users\\stu\my_loc
+c:\\Users\\ITWILL\my_loc
 
 2. my_loc 폴더 안에  my_cal.py 를  옮겨 놓는다. 
-   (my_cal.py 를 my_loc 폴더에 복사하고 기존에 있던 my_cal.py는 지우시오)
+  (my_cal.py 를 my_loc 폴더에 복사하고 기존에 있던 my_cal.py는 지우시오)
 
 
 3.  이 평범한 폴더가 패키지로 인정을 받으려면 반드시 갖고 있어야하는
      파일이 있습니다.  그 파일이 __init__.py 라는 파일입니다. 
 
-c:\\Users\\stu\my_loc
+c:\\Users\\ITWILL\my_loc
                                 |
                                 |
                                  1. __init__.py
