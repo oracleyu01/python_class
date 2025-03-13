@@ -14,8 +14,7 @@ c:\\Users\\ITWILL
 
 c:\\Users\\ITWILL\my_loc
 
-2. my_loc 폴더 안에  my_cal.py 를  옮겨 놓는다. 
-  (my_cal.py 를 my_loc 폴더에 복사하고 기존에 있던 my_cal.py는 지우시오)
+2. my_loc 폴더 안에  yu_auto.py 를  옮겨 놓는다. 
 
 
 3.  이 평범한 폴더가 패키지로 인정을 받으려면 반드시 갖고 있어야하는
@@ -25,13 +24,13 @@ c:\\Users\\ITWILL\my_loc
                                 |
                                 |
                                  1. __init__.py
-                                 2. my_cal.py 
+                                 2. yu_auto.py 
 
 4.  새로운 창에서 아래와 같이 스크립트를 수행합니다. 
 
-from  my_loc  import   my_cal  
+from  my_loc  import  yu_auto 
 
-print ( my_cal.add_number(1,2) )  
+print ( yu_auto.add_number(1,2) )  
                                           
 
 
